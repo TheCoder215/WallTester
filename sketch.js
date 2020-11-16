@@ -24,18 +24,15 @@ function draw() {
  
 
   if((0.5*speed*speed*weight)/(thickness*thickness*thickness)<10 
-  && bullet.x - wall.x < bullet.width/2 + wall.width/2
-  && wall.x - bullet.x < wall.width/2 + bullet.width/2){
+  && collide(bullet, wall)){
     wall.shapeColor = ("green");
   }
 
   if((0.5*speed*speed*weight)/(thickness*thickness*thickness)>=10 
-  && bullet.x - wall.x < bullet.width/2 + wall.width/2
-  && wall.x - bullet.x < wall.width/2 + bullet.width/2){
+  && collide(bullet, wall)) {
     wall.shapeColor = ("red");
   }
   
-  collide(bullet,wall);
   drawSprites();
 }
 
