@@ -24,12 +24,12 @@ function draw() {
  
 
   if((0.5*speed*speed*weight)/(thickness*thickness*thickness)<10 
-  && collide(bullet, wall)){
+  || collide(bullet, wall)){
     wall.shapeColor = ("green");
   }
 
   if((0.5*speed*speed*weight)/(thickness*thickness*thickness)>=10 
-  && collide(bullet, wall)) {
+  || collide(bullet, wall)) {
     wall.shapeColor = ("red");
   }
   
