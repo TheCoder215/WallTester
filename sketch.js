@@ -23,10 +23,20 @@ function setup() {
 function draw() {
   background("black"); 
  
+
 collide(bullet,wall);
-damage = (0.5*speed*speed*weight)/(thickness*thickness*thickness)  
+
   
-  if(damage<10){
+  
+  
+  drawSprites();
+}
+
+function collide(ob1,ob2){
+  if(ob1.x - ob2.x < ob2.width/2 + ob1.width/2
+    && ob2.x - ob1.x < ob2.width/2 + ob1.width/2){
+damage = (0.5*speed*speed*weight)/(thickness*thickness*thickness)  
+   if(damage<10){
     wall.shapeColor = ("green");
   }
 
@@ -35,14 +45,6 @@ damage = (0.5*speed*speed*weight)/(thickness*thickness*thickness)
   }
   
 }
-  
-  drawSprites();
-}
-
-function collide(ob1,ob2){
-  if(ob1.x - ob2.x < ob2.width/2 + ob1.width/2
-    && ob2.x - ob1.x < ob2.width/2 + ob1.width/2){
-
       bullet.velocityX = 0;
       bullet.visible = false;
     }
